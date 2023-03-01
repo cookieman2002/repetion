@@ -1,3 +1,18 @@
 {
- 
+  "posts": [
+    {
+      "title": "den bedste måltid",
+      "author": "John",
+      "created_at": 34147288383,
+      "content": "<p>børge spiste en kartoffel</p>\\<p>kent drak en gulerods juice</p>",
+      "id": 1
+    },
+    {
+      "title": "den store explosion",
+      "author": "Børge",
+      "created_at": 9957733,
+      "content": "<p>børge spiste en kartoffel</p>\\<p>kent drak en gulerods juice</p>",
+      "id": 2
+    }
+  ]
 }
