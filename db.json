@@ -1,28 +1,3 @@
 {
-  "ratings": [
-    {
-      "id": 1,
-      "rating": 2,
-      "classID": 1,
-      "userID": 14
-    },
-    {
-      "id": 2,
-      "rating": 1,
-      "classID": 2,
-      "userID": 11
-    },
-    {
-      "id": 3,
-      "rating": 5,
-      "classID": 1,
-      "userID": 13
-    },
-    {
-      "rating": 2,
-      "classID": 1,
-      "userID": 27,
-      "id": 4
-    }
-  ]
+ 
 }
