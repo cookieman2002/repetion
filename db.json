@@ -1,31 +1,28 @@
 {
-  "posts": [
+  "ratings": [
     {
-      "title": "hello",
-      "desc": "oh no",
-      "id": 1
+      "id": 1,
+      "rating": 2,
+      "classID": 1,
+      "userID": 14
     },
     {
-      "title": "hello",
-      "desc": "oh no",
-      "id": 2
+      "id": 2,
+      "rating": 1,
+      "classID": 2,
+      "userID": 11
     },
-    
     {
-      "title": "dsjakdas",
-      "desc": "oh no",
+      "id": 3,
+      "rating": 5,
+      "classID": 1,
+      "userID": 13
+    },
+    {
+      "rating": 2,
+      "classID": 1,
+      "userID": 27,
       "id": 4
-    },
-    {
-      "title": "dsjakdas",
-      "desc": "djaskdas",
-      "id": 5
-    },
-    {
-      "title": "djsakdjas",
-      "desc": "kdasldasl",
-      "id": 6
     }
-    
   ]
 }
