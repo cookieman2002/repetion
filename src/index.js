@@ -1,12 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Profile from "./pages/Profile"
+import Login from './pages/Login';
+import TokenProvider from './components/TokenProvider';
+import ProtectedLayout from './components/ProtectedLayout';
 
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout/>,
+    children: [
+      {
+        index: true,
+        element: <Home/>
+      },
+      {
+        path: "*",
+        element: <NotFound/>
+      },
+      {
+        path: "/Login",
+        element: <Login/>
+      },
+      {
+        path: "/profile",
+        element: <Profile/>,
+        
+
+      }
+
+    ]
+
+  },
+  {
+    path:"/s",
+    element: <ProtectedLayout/>,
+    children: [
+      {
+        path: "/profile",
+        element: <Profile/>
+      }
+    ]
+  }
+])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <TokenProvider>
+  <RouterProvider router={routes} />
+    </TokenProvider>
   </React.StrictMode>
 );
 
