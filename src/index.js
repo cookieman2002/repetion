@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound';
 import Profile from "./pages/Profile"
 import Login from './pages/Login';
 import TokenProvider from './components/TokenProvider';
-import ProtectedLayout from './components/ProtectedLayout';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const routes = createBrowserRouter([
   {
@@ -29,7 +29,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile/>,
+        element: <ProtectedRoute><Profile/></ProtectedRoute>,
         
 
       }
@@ -37,16 +37,7 @@ const routes = createBrowserRouter([
     ]
 
   },
-  {
-    path:"/s",
-    element: <ProtectedLayout/>,
-    children: [
-      {
-        path: "/profile",
-        element: <Profile/>
-      }
-    ]
-  }
+ 
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
