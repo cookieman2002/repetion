@@ -8,7 +8,7 @@ const [data, setData] = useState();
 
 useEffect(() => {
   (async function(){
-    const res = await axios.get("http://localhost:4000/api/v1/classes")
+    const res = await axios.get("https://fitness-verden-api.onrender.com/api/v1/classes")
     setData(res.data)
   }())
 
@@ -46,7 +46,7 @@ useEffect(() => {
     </form> </div> : null} */}
 
       {data ? data.map(item => (
-      <li  key={item.id}>
+       <li  key={item.id}> 
         <p className="text-xl font-extrabold" >{item.className}</p>
         <p>{item.trainer.trainerName} - {new Date(item.createdAt).toLocaleDateString()}</p>
         {/* <button className="border bg-red-500 ml-5 border-blue-400" onClick={() => {confirmDelete(); setDeleteId(item.id)}}>Slet</button> */}
