@@ -2,28 +2,30 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 function App() {
 const [data, setData] = useState();
-const [showModal, setShowModal] = useState("none");
-const [deleteId, setDeleteId] = useState();
+// const [showModal, setShowModal] = useState("none");
+// const [deleteId, setDeleteId] = useState();
 const [showForm, setShowForm] = useState(false);
 
 useEffect(() => {
   (async function(){
-    const res = await axios.get("http://localhost:4000/posts")
+    const res = await axios.get("http://localhost:4000/api/v1/classes")
     setData(res.data)
   }())
+
 }, []);
 
-  
-async function confirmDelete(id){
-if(showModal === "flex" && deleteId){
-await axios.delete("http://localhost:4000/posts/"+ deleteId)
-setDeleteId(undefined)
-setShowModal("none")
-}
 
 
-  setShowModal("flex")
-}
+// async function confirmDelete(id){
+// if(showModal === "flex" && deleteId){
+// await axios.delete("http://localhost:4000/posts/"+ deleteId)
+// setDeleteId(undefined)
+// setShowModal("none")
+// }
+
+
+//   setShowModal("flex")
+// }
 async function submitHandler(e){
 e.preventDefault()
 console.log(e.target.title.value)
@@ -45,16 +47,16 @@ console.log(e.target.title.value)
 
       {data ? data.map(item => (
       <li  key={item.id}>
-        <p>{item.title}</p>
-        <p>{item.author} - {new Date(item.created_at).toLocaleDateString()}</p>
-        <button className="border bg-red-500 ml-5 border-blue-400" onClick={() => {confirmDelete(); setDeleteId(item.id)}}>Slet</button>
+        <p className="text-xl font-extrabold" >{item.className}</p>
+        <p>{item.trainer.trainerName} - {new Date(item.createdAt).toLocaleDateString()}</p>
+        {/* <button className="border bg-red-500 ml-5 border-blue-400" onClick={() => {confirmDelete(); setDeleteId(item.id)}}>Slet</button> */}
       
     
       </li>)) : null}
-      <div className="gap-5 flex" style={{display: showModal}}>
+      {/* <div className="gap-5 flex" style={{display: showModal}}>
         <button className="bg-red-600" onClick={() => confirmDelete()}>ja</button>
         <button className="bg-green-700" onClick={() => setShowModal("none")}>nej</button>
-      </div>
+      </div> */}
     </ul>
   );
 }
