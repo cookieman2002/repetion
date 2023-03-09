@@ -4,7 +4,7 @@ function App() {
 const [data, setData] = useState();
 // const [showModal, setShowModal] = useState("none");
 // const [deleteId, setDeleteId] = useState();
-const [showForm, setShowForm] = useState(false);
+// const [showForm, setShowForm] = useState(false);
 
 useEffect(() => {
   (async function(){
@@ -26,14 +26,14 @@ useEffect(() => {
 
 //   setShowModal("flex")
 // }
-async function submitHandler(e){
-e.preventDefault()
-console.log(e.target.title.value)
-}
+// async function submitHandler(e){
+// e.preventDefault()
+// console.log(e.target.title.value)
+// }
   return (
     <ul className="flex flex-col">
 
-    <button onClick={() => setShowForm(true)}>Create post</button>
+    {/* <button onClick={() => setShowForm(true)}>Create post</button>
 
     {showForm ? <div> <button onClick={() => setShowForm(!showForm)} className="bg-white">close</button> <form className="rounded-xl bg-black flex flex-col items-center mr-4 ml-4 " onSubmit={submitHandler}>
       <input type="text" placeholder="title" name="title" />
@@ -43,7 +43,7 @@ console.log(e.target.title.value)
       
       <button className="bg-white">Submit</button>
       </div>
-    </form> </div> : null}
+    </form> </div> : null} */}
 
       {data ? data.map(item => (
       <li  key={item.id}>
